@@ -1,5 +1,5 @@
 public class CallrStmt extends Stmt {
-    public static void genCode(String[] tokens){
+    public void genCode(String[] tokens){
 
     }
 }

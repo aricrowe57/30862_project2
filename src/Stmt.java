@@ -1,7 +1,7 @@
 public class Stmt {
     //private static Map<> symbolTable;
-    public static void genCode(String[] tokens){
-
+    public void genCode(String[] tokens){
+        System.out.println("General");
     }
     public ArgObj Sparser(String[] tokens){
         SArgObj argument_object = new SArgObj();
@@ -31,8 +31,7 @@ public class Stmt {
         return argument_object;
     }
     public ArgObj Nullparser(String[] tokens){
-        NullArgObj argument_object = new NullArgObj();
-        return argument_object;
+        return new NullArgObj();
     }
     public ArgObj FPparser(String[] tokens){
         FPArgObj argument_object = new FPArgObj();
