@@ -8,23 +8,23 @@ public class Main {
     public static void main(String[ ] args) {
         String filePath = args[0];
         File file = new File(filePath);
-        List<String> list = new ArrayList<>();
+        List<String> lines = new ArrayList<>();
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;
             while ((st = br.readLine()) != null) {
-                list.add(st);
+                lines.add(st);
             }
             br.close();
-            //System.out.println(list);
+            //System.out.println(lines);
         }
         catch (Exception e){
             System.err.format("Exception occurred trying to read '%s'.", filePath);
             e.printStackTrace();
         }
         int i;
-        for(i = 0; i < list.size(); i++) {
-            String line = list.get(i).trim();
+        for(i = 0; i < lines.size(); i++) {
+            String line = lines.get(i).trim();
             line = line.replaceAll(",", " , ");
             line = line.replaceAll("\\s+", " ");
             String[] tokens = line.split("\\s");
