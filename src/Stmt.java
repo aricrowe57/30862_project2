@@ -7,11 +7,12 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class Stmt {
-    public static int dec_count = 0;
-    public static RStack run_stack = new RStack();
+
     public static Map<String, int[]> symbolTable = new HashMap<>();
     public static ArrayList<Byte> mem = new ArrayList<>(); // opcodes
-    public static Map<String, ArrayList<ArrayList<Integer>>> unknown_labels = new HashMap<>();
+    static int pc = -1; // program counter
+    static int fo = -1; // number of local variables in a function
+    static boolean first_run = true;
     public void genCode(String[] tokens){
         System.out.println("General");
     }
@@ -41,9 +42,7 @@ public class Stmt {
     public static final int FLOAT = 2;
     public static final int RET = 48;
 
-    static int sc = 0; // current line being compiled
-    static int pc = -1; // program counter
-    static int fo = -1; // number of local variables in a function
+
 
     /*public ArgObj Sparser(String[] tokens){
         SArgObj argument_object = new SArgObj();

@@ -23,8 +23,26 @@ public class Main {
             System.err.format("Exception occurred trying to read '%s'.", filePath);
             e.printStackTrace();
         }
-        int i;
-        for(i = 0; i < lines.size(); i++) {
+
+        //Create labels
+        for(int j = 0; j < lines.size(); j++) {
+            String line = lines.get(j).trim();
+            line = line.replaceAll(",", " , ");
+            line = line.replaceAll("\\s+", " ");
+            String[] tokens = line.split("\\s");
+            String token = tokens[0];
+            if (token != null) {
+                if (token.matches("add|callr|call|cmpe|cmpgt|cmplt|decl|div|jmpc|jmp|lab|mul|peek|poke|popm|popv|printc|printf|printi|prints|printv|pushc|pushf|pushi|pushs|pushv|retr|ret|subr|sub|swp")) {
+                    StatementFactory.getStatement(token).genCode(tokens);
+                }
+            }
+        }
+        Stmt.mem.clear();
+        Stmt.pc = -1;
+        Stmt.fo = -1;
+        Stmt.first_run = false;
+
+        for(int i = 0; i < lines.size(); i++) {
             String line = lines.get(i).trim();
             line = line.replaceAll(",", " , ");
             line = line.replaceAll("\\s+", " ");
@@ -39,7 +57,7 @@ public class Main {
             }
         }
         Stmt stmt = new Stmt();
-        String file_2 = "my_Other_Instructions.bin";
+        String file_2 = "my_Basics.bin";
         Byte[] mem = stmt.mem.toArray(new Byte[stmt.mem.size()]);
         byte[] bytes = new byte[stmt.mem.size()];
         int j=0;
