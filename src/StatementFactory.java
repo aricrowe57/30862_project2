@@ -6,17 +6,8 @@ public class StatementFactory {
         else if(token.equals("peek")){
             return new PeekStmt();
         }
-        else if(token.equals("printi")){
+        else if(token.equals("printi")) {
             return new PrintiStmt();
-        }
-        else if(token.equals("printf")){
-            return new PrintfStmt();
-        }
-        else if(token.equals("printc")){
-            return new PrintcStmt();
-        }
-        else if(token.equals("prints")){
-            return new PrintsStmt();
         }
         else if(token.equals("retr")){
             return new RetrStmt();
@@ -74,15 +65,6 @@ public class StatementFactory {
         }
         else if(token.equals("pushi")){
             return new PushiStmt();
-        }
-        else if(token.equals("pushf")){
-            return new PushfStmt();
-        }
-        else if(token.equals("pushs")){
-            return new PushsStmt();
-        }
-        else if(token.equals("pushc")){
-            return new PushcStmt();
         }
         else if(token.equals("subr")){
             return new SubrStmt();
