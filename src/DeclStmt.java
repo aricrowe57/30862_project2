@@ -2,6 +2,7 @@ public class DeclStmt extends Stmt {
     public void genCode(String[] tokens){
         //symbolTable.put(tokens[1], )
         String var_name = "main" + " " + tokens[1];
+        System.out.println(var_name);
         int type = -1;
         if(tokens[2].equals("int")){
             type = INT;
