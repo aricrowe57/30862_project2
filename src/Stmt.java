@@ -39,12 +39,13 @@ public class Stmt {
     public static final int SHORT = 0;
     public static final int INT = 1;
     public static final int FLOAT = 2;
+    public static final int RET = 48;
 
     static int sc = 0; // current line being compiled
     static int pc = -1; // program counter
     static int fo = -1; // number of local variables in a function
 
-    public ArgObj Sparser(String[] tokens){
+    /*public ArgObj Sparser(String[] tokens){
         SArgObj argument_object = new SArgObj();
         argument_object.setString(tokens[1]);
         return argument_object;
@@ -85,5 +86,5 @@ public class Stmt {
         int i = Integer.parseInt(tokens[1].trim());
         argument_object.setInt(i);
         return argument_object;
-    }
+    }*/
 }

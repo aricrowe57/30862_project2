@@ -46,6 +46,8 @@ public class Main {
             bytes[j++] = b.byteValue();
         try {
             FileOutputStream os = new FileOutputStream(file_2);
+            byte[] hardcode = {0b01000110, 0b00010000, 0b00000000, 0b00000000, 0b00000000, 0b01000110, 0b00010001, 0b00000000, 0b00000000, 0b00000000, 0b01000110, 0b00000001, 0b00000000, 0b00000000, 0b00000000, 0b00101100, 0b00000000};
+            os.write(hardcode);
             os.write(bytes);
         }
         catch (Exception e) {

@@ -8,10 +8,10 @@ public class PushiStmt extends Stmt {
         byte [] bytes = ByteBuffer.allocate(4).putInt(value).array();
         //Integer[] bytes = Arrays.copyof(value, value.length);
         mem.add(pushi_bytes[3]);
-        mem.add(bytes[0]);
-        mem.add(bytes[1]);
-        mem.add(bytes[2]);
         mem.add(bytes[3]);
+        mem.add(bytes[2]);
+        mem.add(bytes[1]);
+        mem.add(bytes[0]);
         pc += 5;
     }
 }
