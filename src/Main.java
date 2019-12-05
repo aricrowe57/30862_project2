@@ -7,6 +7,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[ ] args) {
         String filePath = args[0];
+
         File file = new File(filePath);
         List<String> lines = new ArrayList<>();
         try {
