@@ -38,19 +38,19 @@ public class Main {
             }
         }
         Stmt stmt = new Stmt();
-            String file_2 = "my_Basics.bin";
-            Byte[] mem = stmt.mem.toArray(new Byte[stmt.mem.size()]);
-            byte[] bytes = new byte[stmt.mem.size()];
-            int j=0;
-            for(Byte b: mem)
-                bytes[j++] = b.byteValue();
-            try {
-                FileOutputStream os = new FileOutputStream(file_2);
-                os.write(bytes);
-            }
-            catch (Exception e) {
-                System.out.println("FileException");
-            }
+        String file_2 = "my_Basics.bin";
+        Byte[] mem = stmt.mem.toArray(new Byte[stmt.mem.size()]);
+        byte[] bytes = new byte[stmt.mem.size()];
+        int j=0;
+        for(Byte b: mem)
+            bytes[j++] = b.byteValue();
+        try {
+            FileOutputStream os = new FileOutputStream(file_2);
+            os.write(bytes);
+        }
+        catch (Exception e) {
+            System.out.println("FileException");
+        }
 
     }
 }
