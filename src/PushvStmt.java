@@ -2,7 +2,7 @@ import java.nio.ByteBuffer;
 
 public class PushvStmt extends Stmt {
     public void genCode(String[] tokens){
-        String var_name = tokens[1];
+        String var_name = "main " + tokens[1];
         int[] value = symbolTable.get(var_name);
         int mem_address = value[0];
         String[] push_tokens = {"pushi", Integer.toString(mem_address)};

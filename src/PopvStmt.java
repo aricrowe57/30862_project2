@@ -2,7 +2,8 @@ import java.nio.ByteBuffer;
 
 public class PopvStmt extends Stmt {
     public void genCode(String[] tokens){
-        String var_name = tokens[1];
+        String var_name = "main " + tokens[1];
+
         int[] value = symbolTable.get(var_name);
         int mem_address = value[0];
         //push mem address
