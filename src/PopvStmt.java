@@ -11,5 +11,6 @@ public class PopvStmt extends Stmt {
         // popv
         byte [] popv_bytes = ByteBuffer.allocate(4).putInt(POPV).array();
         mem.add(popv_bytes[3]);
+        pc += 1;
     }
 }
