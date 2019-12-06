@@ -49,7 +49,7 @@ public class Main {
             String[] tokens = line.split("\\s");
             String token = tokens[0];
             if (token != null) {
-                if (token.matches("add|callr|call|cmpe|cmpgigt|cmplt|decl|div|jmpc|jmp|lab|mul|peek|poke|popm|popv|printc|printf|printi|prints|printv|pushc|pushf|pushi|pushs|pushv|retr|ret|subr|sub|swp")) {
+                if (token.matches("add|callr|call|cmpe|cmpgt|cmplt|decl|div|jmpc|jmp|lab|mul|peek|poke|popm|popv|printc|printf|printi|prints|printv|pushc|pushf|pushi|pushs|pushv|retr|ret|subr|sub|swp")) {
                     StatementFactory.getStatement(token).genCode(tokens);
                 } else {
                     System.out.println("Unknown stmt: "+token);
